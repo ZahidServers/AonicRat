@@ -38,6 +38,7 @@ public class AonMain extends javax.swing.JFrame {
     public AonMain() {
         initComponents();
         setLocationRelativeTo(null);
+        buildAboutTab();
         serverManager = new ServerManager();
         serverManager.setRootsListener((device, roots) -> {
             // e.g. fill a combo box of drives:
@@ -1506,6 +1507,112 @@ public class AonMain extends javax.swing.JFrame {
                 new AonMain().setVisible(true);
             }
         });
+    }
+
+    private void buildAboutTab() {
+        About_Tab.setLayout(new java.awt.BorderLayout());
+        About_Tab.setBackground(new java.awt.Color(245, 245, 245));
+
+        // ── Centre card ───────────────────────────────────────────────────────
+        javax.swing.JPanel card = new javax.swing.JPanel();
+        card.setLayout(new javax.swing.BoxLayout(card, javax.swing.BoxLayout.Y_AXIS));
+        card.setBackground(java.awt.Color.WHITE);
+        card.setBorder(javax.swing.BorderFactory.createCompoundBorder(
+                javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 153, 255), 2, true),
+                javax.swing.BorderFactory.createEmptyBorder(30, 50, 30, 50)));
+
+        // Title
+        javax.swing.JLabel title = new javax.swing.JLabel("AONICRAT");
+        title.setFont(new java.awt.Font("ROG Fonts", java.awt.Font.BOLD, 42));
+        title.setForeground(new java.awt.Color(0, 153, 255));
+        title.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        card.add(title);
+
+        card.add(javax.swing.Box.createVerticalStrut(4));
+
+        javax.swing.JLabel version = new javax.swing.JLabel("Version 1.0.0-beta");
+        version.setFont(new java.awt.Font("SansSerif", java.awt.Font.PLAIN, 13));
+        version.setForeground(java.awt.Color.GRAY);
+        version.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        card.add(version);
+
+        card.add(javax.swing.Box.createVerticalStrut(20));
+        card.add(separator());
+
+        // Author
+        card.add(javax.swing.Box.createVerticalStrut(16));
+        card.add(sectionLabel("Created By"));
+        card.add(infoLabel("Mohammed Zahid Imtiyaz Wadiwale"));
+
+        card.add(javax.swing.Box.createVerticalStrut(16));
+        card.add(separator());
+
+        // Purpose
+        card.add(javax.swing.Box.createVerticalStrut(16));
+        card.add(sectionLabel("Purpose"));
+        card.add(infoLabel("Strictly for educational and demonstration purposes only."));
+        card.add(infoLabel("No misuse is permitted under any circumstances."));
+
+        card.add(javax.swing.Box.createVerticalStrut(16));
+        card.add(separator());
+
+        // License
+        card.add(javax.swing.Box.createVerticalStrut(16));
+        card.add(sectionLabel("License"));
+        card.add(infoLabel("You may study, modify, and recreate this software,"));
+        card.add(infoLabel("but you MUST give full credit to the original creator."));
+        card.add(infoLabel("Redistribution for malicious use is strictly prohibited."));
+
+        card.add(javax.swing.Box.createVerticalStrut(16));
+        card.add(separator());
+
+        // Disclaimer
+        card.add(javax.swing.Box.createVerticalStrut(16));
+        card.add(sectionLabel("Disclaimer"));
+        card.add(infoLabel("The author holds no responsibility for any misuse of this tool."));
+        card.add(infoLabel("Use only on systems you own or have explicit written permission to test."));
+
+        card.add(javax.swing.Box.createVerticalStrut(24));
+
+        // Footer
+        javax.swing.JLabel footer = new javax.swing.JLabel("© 2025 Mohammed Zahid Imtiyaz Wadiwale — All Rights Reserved");
+        footer.setFont(new java.awt.Font("SansSerif", java.awt.Font.ITALIC, 11));
+        footer.setForeground(java.awt.Color.GRAY);
+        footer.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        card.add(footer);
+
+        // ── Scroll wrapper ────────────────────────────────────────────────────
+        javax.swing.JScrollPane sp = new javax.swing.JScrollPane(card,
+                javax.swing.JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED,
+                javax.swing.JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        sp.setBorder(javax.swing.BorderFactory.createEmptyBorder(30, 60, 30, 60));
+        sp.getViewport().setBackground(new java.awt.Color(245, 245, 245));
+
+        About_Tab.add(sp, java.awt.BorderLayout.CENTER);
+    }
+
+    private javax.swing.JSeparator separator() {
+        javax.swing.JSeparator sep = new javax.swing.JSeparator();
+        sep.setMaximumSize(new java.awt.Dimension(Integer.MAX_VALUE, 1));
+        sep.setForeground(new java.awt.Color(200, 200, 200));
+        return sep;
+    }
+
+    private javax.swing.JLabel sectionLabel(String text) {
+        javax.swing.JLabel l = new javax.swing.JLabel(text.toUpperCase());
+        l.setFont(new java.awt.Font("SansSerif", java.awt.Font.BOLD, 12));
+        l.setForeground(new java.awt.Color(0, 153, 255));
+        l.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        l.setBorder(javax.swing.BorderFactory.createEmptyBorder(0, 0, 4, 0));
+        return l;
+    }
+
+    private javax.swing.JLabel infoLabel(String text) {
+        javax.swing.JLabel l = new javax.swing.JLabel(text);
+        l.setFont(new java.awt.Font("SansSerif", java.awt.Font.PLAIN, 13));
+        l.setForeground(new java.awt.Color(50, 50, 50));
+        l.setAlignmentX(java.awt.Component.CENTER_ALIGNMENT);
+        return l;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
