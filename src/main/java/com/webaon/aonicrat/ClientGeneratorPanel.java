@@ -191,9 +191,10 @@ public class ClientGeneratorPanel extends JPanel {
         // Try to find SimpleServer.jar in sibling project folders
         String base = System.getProperty("user.dir");
         String[] candidates = {
+            base + "/SimpleServer/target/SimpleServer-1.0.0-beta.jar",
+            base + "/SimpleServer/target/SimpleServer-1.0.0.jar",
             base + "/../SimpleServer/target/SimpleServer-1.0.0-beta.jar",
             base + "/../SimpleServer/target/SimpleServer-1.0.0.jar",
-            base + "/../SimpleServer/SimpleServer.jar",
         };
         for (String c : candidates) {
             File f = new File(c);
