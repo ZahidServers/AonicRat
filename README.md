@@ -36,6 +36,12 @@ By studying AonicRAT you will understand the core technical concepts behind:
 
 ---
 
+## Demo
+
+[![AonicRAT Demo](https://img.youtube.com/vi/z3ta1hQJclw/maxresdefault.jpg)](https://youtu.be/z3ta1hQJclw)
+
+---
+
 ## Cross-Platform Support
 
 Both the **Controller** and the **Agent** run on any major operating system. There are no platform restrictions on either side.
